@@ -1,3 +1,41 @@
-// partials/_variables.scss
+$base-font-size: 1rem;
+$line-height-unitless: 1.45;
+$line-height: #{($base-font-size*$line-height-unitless)};
+$line-height-2x: #{($base-font-size*$line-height-unitless)*2};
 
-$lightgrey: #eeeeee;
+$primary-color: #00cfb5;
+$secondary-color: #c00;
+
+$subdued-grey: #fafafa;
+$light-grey: #cedbe2;
+$grey: #95a7b1;
+$dark-grey: #7290a0;
+$white: #fff;
+$black: #222;
+
+$body-text-color: $black;
+$heading-text-color: #111;
+
+$link-color: $primary-color;
+
+// A note on the spelling of colour: As much as it pains me to write 'color', we've decided to take on the American, CSS spelling. We’re going to spell "grey" the correct way though.
+// Please forgive us, Canada!
+
+// Fonts
+// A Linux- and Windows-friendly sans-serif font stack: http://prospects.mhurrell.co.uk/post/updating-the-helvetica-font-stack
+$sans: -apple-system, BlinkMacSystemFont, "Roboto", Helmet, Freesans, sans-serif;
+
+$serif: Georgia, serif;
+
+$monospace: Monaco, Menlo, 'Ubuntu Mono', Consolas, monospace;
+
+// Bourbon Config
+$grid-columns: 12;
+$gutter: $line-height;
+$max-width: em(800);
+// $visual-grid         :  true;
+// $visual-grid-index   :  back;
+// $visual-grid-colour  :	 rgba(0, 0, 15, .5);
+
+// Breakpoints
+$small: new-breakpoint(min-width 500px 4);

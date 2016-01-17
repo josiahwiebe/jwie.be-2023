@@ -1,0 +1,28 @@
+#{$all-text-inputs} {
+  border: 1px solid $light-grey;
+  appearance: none;
+  color: $dark-grey;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.125rem;
+}
+
+textarea {
+  padding: #{($line-height-unitless/2)}rem;
+}
+
+#{$all-buttons},
+.btn {
+  background-color: $link-color;
+  color: $white;
+  padding: 0.25rem 0.5rem;
+  margin-bottom: $line-height;
+  border: 1px solid $link-color;
+  border-radius: 0.125rem;
+  cursor: pointer;
+  &:hover {
+    background-color: tint($link-color, 10%);
+  }
+  &:active {
+    background-color: shade($link-color, 5%);
+  }
+}
