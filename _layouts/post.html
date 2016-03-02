@@ -3,8 +3,8 @@ layout: default
 ---
 <article class="post">
 
-	<h1 class="entry-title">{{ post.title }}</h1>
-  <p class="description">Written by {{ post.author }} on {{ post.date }}</p>
+	<h1 class="entry-title">{{ page.title }}</h1>
+  <p class="description">Written by {{ page.author }} on {{ page.date | date: "%d %B %Y"}}</p>
 
 	<div class="entry-content">
 
