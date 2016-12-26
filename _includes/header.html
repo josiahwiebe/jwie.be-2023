@@ -1,15 +1,29 @@
-<div class="wrapper">
-  <header class="site-header" role="banner">
-    <h1 class="site-name">Name: <a href="/" rel="home">{{site.title}}</a></h1>
-    <div class="description">{{site.description}}</div>
-    <nav class="site-nav" role="navigation">
-      <div class="menu">
-      {% assign section = page.url | remove_first:'/' | split:'/' | first %}
-
-      {% for page in site.pages %}
-        <li class="menu-item"><a href="{{page.url}}">{{page.title}}</a></li>
-      {% endfor %}
-      </div>
-    </nav>
-  </header>
-</div>
+<header class="cf w-100">
+  <div class="fr w-100">
+    <h1 class="f4 f3-l lh-title mt0 mb4">
+      <a href="/">{{site.title}}</a>
+    </h1>
+  </div>
+  <div class="f6 lh-copy fl w-100 mb4">
+    <div class="fl-ns w-100 w-50-l pr3-m pr5-l mb4">
+      <p>
+        Josiah is a designer &amp; developer based in the Canadian Prairies. He is passionate about Javascript development and advancing the open source community. Most of his work is done through <a href="https://collectif.co" target="_blank">Collectif</a>.
+      </p>
+    </div>
+    <div class="fl-ns w-33-m w-15-l pr3-m pr5-l">
+      <p>
+        <span class="db">Thoughts on</span> <a href="https://twitter.com/{{site.twitter_username}}" target="_blank">Twitter</a>
+      </p>
+    </div>
+    <div class="fl-ns w-33-m w-15-l pr3-m pr5-l">
+      <p>
+        <span class="db">Code on</span> <a href="https://github.com/{{site.github_username}}" target="_blank">Github</a>
+      </p>
+    </div>
+    <div class="fl-ns w-33-m w-15-l pr3-m pr5-l">
+      <p>
+        <span class="db">Images on</span> <a href="https://instagram.com/{{site.instagram_username}}" target="_blank">Instagram</a>
+      </p>
+    </div>
+  </div>
+</header>
