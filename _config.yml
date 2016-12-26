@@ -1,15 +1,30 @@
-# Site settings
+---
 title: Josiah Wiebe
+timezone: UTC
+collections:
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
 email: hi@jwie.be
-description: > # this means to ignore newlines until "baseurl:"
-  Josiah is a designer & developer based in the Canadian Prairies. He is passionate about Javascript development and advancing the open source community.
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "https://jwie.be" # the base hostname & protocol for your site
+description: 'Josiah is a designer & developer based in the Canadian Prairies. He
+  is passionate about Javascript development and advancing the open source community.
+
+'
+baseurl: 
+url: https://jwie.be
 twitter_username: josiahwiebe
-github_username:  josiahwiebe
+github_username: josiahwiebe
 instagram_username: josiahwiebe
 spotify_username: josiahwiebe
-exclude: ['/node_modules/','**.sublime-project','**.sublime-workspace','gulpfile.js','package.json','.git', 'README.md']
-
-# Build settings
+exclude:
+- "/node_modules/"
+- "**.sublime-project"
+- "**.sublime-workspace"
+- gulpfile.js
+- package.json
+- ".git"
+- README.md
 markdown: kramdown
