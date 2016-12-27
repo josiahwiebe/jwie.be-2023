@@ -12,11 +12,8 @@ collections:
     title: Work
     output: false
 email: hi@jwie.be
-description: 'Josiah is a designer & developer based in the Canadian Prairies. He
-  is passionate about Javascript development and advancing the open source community.
-
-'
-baseurl: 
+description: 'Josiah is a designer & developer based in the Canadian Prairies. He is passionate about Javascript development and the great outdoors. Most of his work is done through Collectif.'
+baseurl:
 url: https://jwie.be
 twitter_username: josiahwiebe
 github_username: josiahwiebe
