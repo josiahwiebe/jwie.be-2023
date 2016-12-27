@@ -6,6 +6,5 @@ hero: "/dist/img/jw-island.jpg"
 work:
 - Whitecap Coffee
 - MBHoF
-layout: default
+layout: home
 ---
-
