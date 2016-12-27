@@ -1,6 +1,6 @@
-<footer class="cf w-100 pt5 black-70">
-  <!-- <a href="mailto:" class="link f5 f2-ns black-70 lh-solid">hi@jwie.be</a> -->
-  <span class="f4 db w-100 w-40-l mb4">Send me an email at
+<footer class="cf w-100 pt5">
+  <div class="fl-ns f4 w-100 w-40-l mb4">
+    <span class="db mb2">Send me an email at</span>
     <script type="text/javascript">
     //<![CDATA[
     <!--
@@ -21,14 +21,18 @@
     //-->
     //]]>
     </script>
-  </span>
-
-  <div class="mt5">
-    <a href="https://twitter.com/{{site.twitter_username}}" target="_blank" title="Follow me on Twitter" class="f6 dib pr2 mid-gray dim">Twitter</a>
-    <a href="https://github.com/{{site.github_username}}" target="_blank" title="Check out my code on Github" class="f6 dib pr2 mid-gray dim">Github</a>
-    <a href="https://instagram.com/{{site.instagram_username}}" target="_blank" title="Follow me on Instagram" class="f6 dib pr2 mid-gray dim">Instagram</a>
-    <a href="https://open.spotify.com/user/{{site.spotify_username}}" target="_blank" title="Spotify" class="f6 dib pr2 mid-gray dim">Spotify</a>
-    <span class="f6 db mid-gray">View more work at <a href="http://collectif.co" target="_blank" title="Collectif" class="dim">Collectif</a></span>
   </div>
-  <p class="f6 db lh-solid gray mt3">&copy; 2011–{{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+
+  <div class="fl-ns f5 w-100 w-60-l mb4">
+    <span class="f4 db mb2">On the web</span>
+    <a href="https://twitter.com/{{site.twitter_username}}" target="_blank" title="Follow me on Twitter" class="dib mr3">Twitter</a>
+    <a href="https://github.com/{{site.github_username}}" target="_blank" title="Check out my code on Github" class="dib mr3">Github</a>
+    <a href="https://instagram.com/{{site.instagram_username}}" target="_blank" title="Follow me on Instagram" class="dib mr3">Instagram</a>
+    <a href="https://open.spotify.com/user/{{site.spotify_username}}" target="_blank" title="Spotify" class="dib mr3">Spotify</a>
+    <span class="f6 db mt2 mid-gray">View more work at <a href="http://collectif.co" target="_blank" title="Collectif">Collectif</a>.</span>
+  </div>
+
+  <div class="fl-ns db w-100 mt5 cf">
+    <p class="f6 db lh-solid gray mt3">&copy; 2011–{{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+  </div>
 </footer>
