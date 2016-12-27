@@ -10,7 +10,7 @@ collections:
     output: true
   work:
     title: Work
-    output: true
+    output: false
 email: hi@jwie.be
 description: 'Josiah is a designer & developer based in the Canadian Prairies. He
   is passionate about Javascript development and advancing the open source community.
