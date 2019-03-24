@@ -1,26 +1,29 @@
 {
-  "name": "clctf-starter",
-  "version": "1.0.0",
-  "description": "A starter build for Collectif's Jekyll & Gulp workflow. Includes Bourbon & Neat.",
-  "author": "@collectifco",
+  "name": "jwie.be",
   "license": "MIT",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "^8.0.3",
+    "postcss-nested": "^4.1.2",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "styled-jsx-plugin-postcss": "^2.0.0"
+  },
+  "postcss": {
+    "plugins": {
+      "postcss-nested": {}
+    }
+  },
   "devDependencies": {
-    "browser-sync": "^2.4.0",
-    "critical": "^0.5.7",
-    "del": "^2.2.0",
-    "gulp": "^3.8.11",
-    "gulp-autoprefixer": "^2.3.1",
-    "gulp-clean": "^0.3.1",
-    "gulp-concat": "^2.5.2",
-    "gulp-cssmin": "^0.1.6",
-    "gulp-notify": "^2.2.0",
-    "gulp-plumber": "^1.0.1",
-    "gulp-rename": "^1.2.0",
-    "gulp-sass": "^2.1.1",
-    "gulp-shell": "^0.4.2",
-    "gulp-uglify": "^1.2.0",
-    "gulp-watch": "^4.2.4",
-    "node-bourbon": "^4.2.1-beta1",
-    "node-neat": "^1.7.1-beta1"
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.15.3",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "prettier": "^1.16.4"
   }
 }
