@@ -29,6 +29,7 @@ const Head = props => (
     <meta property='og:image' content={props.ogImage || defaultOGImage} />
     <meta property='og:image:width' content='1200' />
     <meta property='og:image:height' content='630' />
+    <link rel='stylesheet' type='text/css' href='https://cloud.typography.com/7431472/7203212/css/fonts.css' />
   </NextHead>
 )
 

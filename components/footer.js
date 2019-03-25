@@ -6,10 +6,10 @@ const getYear = () => {
   return now.getFullYear()
 }
 
-export default () => (
+export const Footer = () => (
   <footer>
     <div className='footer-left'>
-      <span className='footer-title'>Send me an email at</span>
+      <span className='footer-title'>Get in touch</span>
       <Link href='mailto:hi@jwie.be'>
         <a>hi@jwie.be</a>
       </Link>
@@ -41,26 +41,43 @@ export default () => (
     </div>
     <style jsx>{`
       footer {
-        padding-top: 4rem;
+        margin-top: 3rem;
+        padding-top: 2rem;
         width: 100%;
-        font-size: 1.25rem;
+        font-size: 0.875rem;
         clear: both;
         overflow: hidden;
+        border-top: 1px dashed #e4e4e4;
+        &:after {
+          content: '';
+          clear: both;
+          position: relative;
+          display: table;
+        }
       }
 
       .footer-title {
-        font-size: 1.25rem;
         margin-bottom: 0.5rem;
         display: block;
+        font-size: 1.25rem;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-weight: 600;
+        @media screen and (min-width: 60em) {
+          font-size: 1.5rem;
+        }
       }
 
       .footer-link {
         display: inline-block;
-        margin-right: 1rem;
+        margin-right: 1.25rem;
+        &:last-of-type {
+          margin-right: 0;
+        }
       }
 
       .footer-more {
         font-size: 0.875rem;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
         margin-top: 0.5rem;
         color: #555;
         display: block;
@@ -83,9 +100,10 @@ export default () => (
       }
 
       .footer-right {
-        font-size: 1rem;
+        font-size: 0.75rem;
         @media screen and (min-width: 60em) {
           width: 60%;
+          font-size: 0.875rem;
         }
       }
 
@@ -93,6 +111,7 @@ export default () => (
         width: 100%;
         display: block;
         margin-top: 4rem;
+        clear: both;
 
         @media screen and (min-width: 30em) {
           float: left;
@@ -100,9 +119,9 @@ export default () => (
         }
 
         p {
-          font-size: 0.875rem;
+          font-size: 0.75rem;
           color: #777;
-          line-height: 1;
+          line-height: 1.5;
           display: block;
           margin-top: 1rem;
         }
@@ -110,3 +129,5 @@ export default () => (
     `}</style>
   </footer>
 )
+
+export default Footer
