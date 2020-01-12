@@ -19,7 +19,7 @@ const Home = () => (
       </div>
       <div className='work-box-item'>
         <span className='item-title'>
-          <Link href='https://drinkwhitecap.com'>
+          <Link href='https://mbhof.ca'>
             <a target='_blank' rel='noopener'>MBHoF</a>
           </Link>
         </span>
