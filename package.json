@@ -1,6 +1,9 @@
 {
   "name": "jwie.be",
   "license": "MIT",
+  "engines": { 
+    "node": "12.x"
+  },
   "scripts": {
     "dev": "next",
     "build": "next build",
