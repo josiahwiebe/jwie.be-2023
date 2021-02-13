@@ -1,6 +1,10 @@
 import Link from 'next/link'
 import Layout from '../components/layout'
 
+export const config = {
+  unstable_runtimeJS: false
+}
+
 const Home = () => (
   <Layout title='Home' showFullHeader>
     <div className='content'>
