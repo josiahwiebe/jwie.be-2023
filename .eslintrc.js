@@ -1,6 +1,6 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
-  extends: ['plugin:@next/next/recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
+  extends: ['plugin:@typescript-eslint/recommended', 'prettier', 'plugin:@next/next/recommended'],
   parserOptions: {
     ecmaVersion: 7,
     ecmaFeatures: {

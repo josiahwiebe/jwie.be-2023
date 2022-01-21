@@ -2,7 +2,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import config from '../config'
 
-export const Header = props => (
+interface HeaderProps {
+  title: string
+  home?: boolean
+}
+
+export const Header = (props: HeaderProps) => (
   <header>
     <div className='site-title-box flex items-center flex-row'>
       <Link href='/' passHref>
@@ -15,8 +20,9 @@ export const Header = props => (
       </Link>
       <div className='flex flex-col ml-4'>
         <h1
-          className={`text-2xl font-bold mt-0 leading-6 md:leading-8 sm:text-3xl md:text-4xl ${!props.home &&
-            'bg-gradient-primary bg-clip-text text-transparent'}`}>
+          className={`text-2xl font-bold mt-0 leading-6 md:leading-8 sm:text-3xl md:text-4xl ${
+            !props.home && 'bg-gradient-primary bg-clip-text text-transparent'
+          }`}>
           <Link href='/' passHref>
             <a>{config.title}</a>
           </Link>

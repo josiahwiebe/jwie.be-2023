@@ -5,7 +5,14 @@ const defaultDescription = ''
 const defaultOGURL = ''
 const defaultOGImage = ''
 
-const Head = props => (
+interface HeadProps {
+  title?: string
+  description?: string
+  url?: string
+  ogImage?: string
+}
+
+const Head = (props: HeadProps) => (
   <NextHead>
     <meta charSet='utf-8' />
     <title>
