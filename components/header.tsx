@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Profile from '../public/static/avatar.jpg'
 import Link from 'next/link'
 import config from '../config'
 
@@ -13,7 +14,7 @@ export const Header = (props: HeaderProps) => (
       <Link href='/' passHref>
         <Image
           className='rounded-full hover:cursor-pointer hover:transition-transform hover:rotate-12'
-          src='/static/avatar.png'
+          src={Profile}
           height='100px'
           width='100px'
         />
