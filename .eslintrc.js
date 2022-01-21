@@ -1,20 +1,15 @@
 module.exports = {
-  env: {
-    browser: true,
-    es6: true,
-    node: true
-  },
-  parser: 'babel-eslint',
-  extends: ['eslint:recommended', 'plugin:react/recommended', 'prettier'],
+  parser: '@typescript-eslint/parser',
+  extends: ['plugin:@next/next/recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
   parserOptions: {
     ecmaVersion: 7,
     ecmaFeatures: {
       experimentalObjectRestSpread: true,
-      jsx: true
+      jsx: true,
     },
-    sourceType: 'module'
+    sourceType: 'module',
   },
-  plugins: ['prettier', 'eslint-plugin-react'],
+  plugins: ['@typescript-eslint', 'prettier'],
   rules: {
     indent: ['warn', 2],
     'linebreak-style': ['error', 'unix'],
@@ -24,6 +19,6 @@ module.exports = {
     'react/prop-types': 0,
     'react/no-unescaped-entities': 0,
     'react/react-in-jsx-scope': 0,
-    'react/display-name': 0
-  }
+    'react/display-name': 0,
+  },
 }
