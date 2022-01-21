@@ -12,12 +12,9 @@ export const Header = (props: HeaderProps) => (
   <header>
     <div className='site-title-box flex items-center flex-row'>
       <Link href='/' passHref>
-        <Image
-          className='rounded-full hover:cursor-pointer hover:transition-transform hover:rotate-12'
-          src={Profile}
-          height='100px'
-          width='100px'
-        />
+        <div className='relative w-24 h-24 rounded-full hover:cursor-pointer transition-transform hover:transition-transform hover:rotate-[30deg] overflow-hidden'>
+          <Image src={Profile} layout='fill' placeholder='blur' priority />
+        </div>
       </Link>
       <div className='flex flex-col ml-4'>
         <h1
