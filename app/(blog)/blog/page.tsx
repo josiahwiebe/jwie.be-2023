@@ -20,7 +20,7 @@ export default async function BlogPage() {
       {posts.map(post => (
         <article key={post.slug} className='flex flex-col space-y-4'>
           <div className='flex flex-col space-y-2'>
-            <Link href={post.url}>
+            <Link href={post.url} passHref>
               <h2 className='max-w-[80%] text-2xl font-bold leading-normal sm:text-3xl md:text-3xl'>
                 {post.frontMatter.title}
               </h2>
