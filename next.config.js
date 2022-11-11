@@ -1,14 +1,8 @@
-const withMDX = require('@next/mdx')({
-  extension: /\.mdx?$/,
-  options: {
-    remarkPlugins: [require('remark-prism')],
-  },
-})
+/** @type {import('next').NextConfig} */
 
-module.exports = withMDX({
-  pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
+module.exports = {
   experimental: {
-    concurrentFeatures: true,
+    appDir: true,
   },
   reactStrictMode: true,
   webpack: (config, { dev, isServer }) => {
@@ -28,4 +22,4 @@ module.exports = withMDX({
 
     return config
   },
-})
+}

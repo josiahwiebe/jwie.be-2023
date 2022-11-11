@@ -1,0 +1,56 @@
+import Link from 'next/link'
+
+export default async function IndexPage() {
+  return (
+    <>
+      <section className='container grid items-center gap-6 pt-6'>
+        <div className='flex flex-col gap-4'>
+          <h1 className='text-2xl font-bold sm:text-3xl md:text-4xl'>👋 Hi, I'm Josiah</h1>
+          <p className='text-gray-500 lg:text-lg'>
+            I'm a software engineer and marketing manager based in the Canadian Praries. I currently run the marketing
+            team at <Link href='https://leisurevans.com/'>Leisure Travel Vans</Link>.
+          </p>
+        </div>
+        <div className='grid grid-cols-1 md:grid-cols-3 md:gap-6'>
+          <div className='flex flex-col gap-4 mt-12'>
+            <h2 className='text-xl font-semibold sm:text-2xl md:text-3xl'>On this website</h2>
+            <ul className='list-disc list-inside'>
+              <li>
+                <Link href='/blog'>Blog</Link>
+              </li>
+              <li>
+                <Link href='/uses'>Uses</Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className='flex flex-col gap-4 mt-12'>
+            <h2 className='text-xl font-semibold sm:text-2xl md:text-3xl'>Not on this website</h2>
+            <ul className='list-disc list-inside'>
+              <li>
+                <Link href='https://twitter.com/josiahwiebe'>Twitter</Link>
+              </li>
+              <li>
+                <Link href='https://github.com/josiahwiebe'>GitHub</Link>
+              </li>
+              <li>
+                <Link href='https://instagram.com/josiahwiebe'>Instagram</Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className='flex flex-col gap-4 mt-12'>
+            <h2 className='text-xl font-semibold sm:text-2xl md:text-3xl'>Get in touch</h2>
+            <ul className='list-disc list-inside'>
+              <li>
+                <Link href='mailto:hi@jwie.be' className='footer-link'>
+                  hi@jwie.be
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </>
+  )
+}
