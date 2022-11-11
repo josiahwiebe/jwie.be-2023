@@ -1,3 +1,4 @@
+import '@styles/nord.css'
 import { notFound } from 'next/navigation'
 import { serialize } from 'next-mdx-remote/serialize'
 import rehypePrism from '@mapbox/rehype-prism'

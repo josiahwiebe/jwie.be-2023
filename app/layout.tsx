@@ -1,5 +1,4 @@
 import '@styles/styles.css'
-import '@styles/nord.css'
 import Link from 'next/link'
 import Image from 'next/image'
 import Profile from '../public/static/avatar.jpg'
