@@ -8,7 +8,7 @@ export default async function IndexPage() {
           <h1 className='text-2xl font-bold sm:text-3xl md:text-4xl'>👋 Hi, I'm Josiah</h1>
           <p className='text-gray-500 lg:text-lg'>
             I'm a multi-disciplinary developer and marketing manager based in the Canadian Praries. I currently lead the
-            marketing team at <Link href='https://leisurevans.com/'>Leisure Travel Vans</Link>.
+            marketing team at <a href='https://leisurevans.com/'>Leisure Travel Vans</a>.
           </p>
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 md:gap-6'>
@@ -36,13 +36,13 @@ export default async function IndexPage() {
             <p className='text-sm text-gray-400'>In other corners of the web.</p>
             <ul className='list-disc list-inside'>
               <li>
-                <Link href='https://twitter.com/josiahwiebe'>Twitter</Link>
+                <a href='https://twitter.com/josiahwiebe'>Twitter</a>
               </li>
               <li>
-                <Link href='https://github.com/josiahwiebe'>GitHub</Link>
+                <a href='https://github.com/josiahwiebe'>GitHub</a>
               </li>
               <li>
-                <Link href='https://instagram.com/josiahwiebe'>Instagram</Link>
+                <a href='https://instagram.com/josiahwiebe'>Instagram</a>
               </li>
             </ul>
           </div>
@@ -52,9 +52,9 @@ export default async function IndexPage() {
             <p className='text-sm text-gray-400'>Where to say hello.</p>
             <ul className='list-disc list-inside'>
               <li>
-                <Link href='mailto:hi@jwie.be' className='footer-link'>
+                <a href='mailto:hi@jwie.be' className='footer-link'>
                   hi@jwie.be
-                </Link>
+                </a>
               </li>
             </ul>
           </div>

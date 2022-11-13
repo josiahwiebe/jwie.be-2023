@@ -28,12 +28,10 @@ export default async function FeedPage() {
               <div className='w-full'>
                 <div className='flex space-x-1 lg:space-x-2 items-center justify-between'>
                   <header className='flex space-x-1 lg:space-x-2 items-center'>
-                    <a
-                      href={`/status/${timeStamp}`}
-                      className='flex space-x-1 lg:space-x-2 items-center text-black no-underline'>
+                    <div className='flex space-x-1 lg:space-x-2 items-center text-black no-underline'>
                       <span className='font-semibold text-default-high'>Josiah Wiebe</span>
                       <span className='text-slate-400'>@josiahwiebe</span>
-                    </a>
+                    </div>
                     <span className='text-slate-400'>•</span>
                     <span className='text-slate-400'>{formatDate(status.frontMatter.date)}</span>
                   </header>
