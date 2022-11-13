@@ -1,10 +1,7 @@
-export const meta = {
-  title: 'Building the Newsprint',
-  date: '2020-05-01',
-}
-
-import Post from '../../components/post'
-export default Post
+---
+title: Building The Newsprint
+date: 2020-05-01
+---
 
 This past week, Josh approached me about re-building his site, [The Newsprint](https://thenewsprint.co).
 We've kind of been in an ongoing discussing since he [started](https://thenewsprint.co/2013/12/14/the-newsprint-an-introduction/) the column a year ago. He's asked for various advice and I've given it as best as I can.
@@ -31,7 +28,6 @@ title: 'Example Title'
 date: 2 December 2014
 link: http://example.com/link
 ---
-
 ```
 
 To show the permalink icon and make the title link, I added an if statement to the post waterfall. I also wanted to show the entire post's content if it was a link post, rather than the standard excerpt. I also used a simple Unicode circle for the permalink to ensure cross-compatibility.
