@@ -7,8 +7,16 @@ import FeedLayout from '@components/feed-wrapper'
 
 interface StatusPageProps {
   params: {
-    slug: string
+    slug: string[]
   }
+}
+
+export async function generateStaticParams(): Promise<StatusPageProps['params'][]> {
+  const files = await Status.getMdxFiles()
+
+  return files?.map(file => ({
+    slug: file.slug.split('/'),
+  }))
 }
 
 export default async function StatusPage({ params }: StatusPageProps) {
