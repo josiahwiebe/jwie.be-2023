@@ -34,12 +34,17 @@ a {
   background-clip: text;
   border: transparent;
   text-decoration: underline;
-  transition: color 200ms ease-in-out;
+  transition: color 120ms ease-in-out;
 }
 
 a:hover {
   color: transparent;
-  transition: color 200ms ease-in-out;
+  transition: color 120ms ease-in-out;
+}
+
+.status-link a {
+  color: unset;
+  text-decoration: none;
 }
 
 .footer-byline {

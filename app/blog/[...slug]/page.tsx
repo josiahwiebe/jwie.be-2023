@@ -32,12 +32,12 @@ export default async function PostPage({ params }: PostPageProps) {
 
   return (
     <article className='container pt-8 md:max-w-3xl md:pt-12 lg:pt-24'>
-      <div className='flex flex-col space-y-4'>
+      <header className='flex flex-col space-y-4'>
         <h1 className='md:leading-12 text-2xl font-bold leading-[1.2] sm:text-3xl md:text-5xl'>
           {post.frontMatter.title}
         </h1>
         {post.frontMatter.date && <p className='text-slate-800'>{formatDate(post.frontMatter.date)}</p>}
-      </div>
+      </header>
       <div className='pt-12 pb-8 md:pt-10 md:pb-8 lg:pt-12 lg:pb-12'>
         <hr className='border-slate-100' />
       </div>

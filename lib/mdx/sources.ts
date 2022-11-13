@@ -13,6 +13,16 @@ export const Blog = createSource({
   }),
 })
 
+export const Status = createSource({
+  contentPath: 'content/status',
+  basePath: '/status',
+  sortBy: 'date',
+  sortOrder: 'desc',
+  frontMatter: z.object({
+    date: z.string(),
+  }),
+})
+
 export const Page = createSource({
   contentPath: 'content/pages',
   basePath: '/',

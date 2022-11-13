@@ -7,6 +7,8 @@ import { VFile } from 'vfile'
 import { matter } from 'vfile-matter'
 import * as z from 'zod'
 
+// I can't take credit for this one, shamelessly copied from [shadcn/taxonomy](https://github.com/shadcn/taxonomy/blob/1b87454847ba734b2474afb0ebc18d20ab672457/lib/mdx/index.ts)
+
 const mdxCache = new NodeCache()
 
 export interface Source<T> {

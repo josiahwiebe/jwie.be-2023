@@ -11,7 +11,7 @@ const getYear = () => {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en'>
-      <body className='mx-auto my-0 p-4 max-w-5xl font-sans text-black bg-white'>
+      <body className='mx-auto my-0 p-4 max-w-2xl font-sans text-black bg-white'>
         <header className='mb-8 pb-4 border-b'>
           <div className='mt-2 w-full lg:mt-0 flex items-center flex-row'>
             <Link href='/' passHref>
@@ -20,12 +20,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </div>
             </Link>
             <div className='flex flex-col ml-4'>
-              <h1 className='text-lg leading-6 font-bold mt-0 md:leading-5 md:text-xl [bg-gradient-primary bg-clip-text text-transparent]'>
+              <h1 className='text-lg leading-6 font-bold mt-0 md:leading-5 md:text-xl hover:text-transparent'>
                 <Link href='/' className='text-black no-underline'>
                   Josiah Wiebe
                 </Link>
               </h1>
-              <span className='text-gray-500 text-xs md:text-sm'>Not very online</span>
+              <span className='text-gray-400 text-xs md:text-sm'>Not very online</span>
             </div>
           </div>
         </header>
