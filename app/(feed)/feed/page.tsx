@@ -20,7 +20,7 @@ export default async function FeedPage() {
   return (
     <>
       {session && (
-        <div className='flex mt-4 px-2 lg:px-4 pb-4 border-b border-b-slate-100'>
+        <div className='flex mt-4 px-2 lg:px-4 pb-4 border-b border-b-slate-100 dark:border-b-slate-600'>
           <div className='mr-3 w-16 h-12'>
             <Image
               src={Profile}
@@ -35,10 +35,12 @@ export default async function FeedPage() {
       )}
       {statuses.map(status => {
         return (
-          <article key={status.slug} className=' border-b border-b-slate-100 cursor-pointer hover:bg-slate-100'>
+          <article
+            key={status.slug}
+            className=' border-b border-b-slate-100 dark:border-b-slate-600 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-600'>
             <a
               href={`/status/${status.slug}`}
-              className='status-link flex px-2 lg:px-4 py-5 no-underline text-current hover:text-current'>
+              className='status-link flex px-2 lg:px-4 py-5 no-underline bg-clip-border bg-none text-current hover:text-current'>
               <div className='mr-3 w-16 h-12'>
                 <Image
                   src={Profile}
@@ -52,7 +54,7 @@ export default async function FeedPage() {
                 <div className='flex space-x-1 lg:space-x-2 items-center justify-between'>
                   <header className='flex space-x-1 lg:space-x-2 items-center'>
                     <div className='flex space-x-1 lg:space-x-2 items-center text-black no-underline'>
-                      <span className='font-semibold text-default-high'>Josiah Wiebe</span>
+                      <span className='font-semibold dark:text-slate-300'>Josiah Wiebe</span>
                       <span className='text-slate-400'>@josiahwiebe</span>
                     </div>
                     <span className='text-slate-400'>•</span>
@@ -68,7 +70,7 @@ export default async function FeedPage() {
                     </svg>
                   </button> */}
                 </div>
-                <p className='mt-2'>{status.content}</p>
+                <p className='mt-2 dark:text-slate-300'>{status.content}</p>
               </div>
             </a>
           </article>

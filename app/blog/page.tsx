@@ -9,13 +9,13 @@ export default async function BlogPage() {
   return (
     <div className='container pt-2 md:max-w-3xl md:pt-3 lg:pt-4'>
       <div className='mx-auto flex flex-col gap-4 mb-4'>
-        <h1 className='text-xl font-bold leading-[1.1] sm:text-2xl md:text-4xl'>Blog</h1>
-        <p className='max-w-[75%] leading-normal text-slate-700 sm:text-lg sm:leading-7'>
+        <h1 className='text-xl font-bold leading-[1.1] sm:text-2xl md:text-4xl dark:text-slate-300'>Blog</h1>
+        <p className='max-w-[75%] leading-normal text-slate-700 sm:text-lg sm:leading-7 dark:text-slate-600'>
           Infrequently updated, here's where I write about things I'm working on and things I'm learning.
         </p>
       </div>
       <div className='md:pt-18 pt-12 pb-8 md:pb-10 lg:pt-24 lg:pb-12'>
-        <hr className='border-slate-100' />
+        <hr className='border-slate-100 dark:border-slate-600' />
       </div>
       {posts.map(post => (
         <article key={post.slug} className='flex flex-col space-y-4'>
@@ -29,7 +29,7 @@ export default async function BlogPage() {
           </div>
           {post.frontMatter.excerpt && <p className='text-slate-600'>{post.frontMatter.excerpt}</p>}
           <div className='py-8 md:py-10 lg:py-12'>
-            <hr className='border-slate-100' />
+            <hr className='border-slate-100 dark:border-slate-600' />
           </div>
         </article>
       ))}

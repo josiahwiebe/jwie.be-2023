@@ -29,7 +29,7 @@ export default async function StatusPage({ params }: StatusPageProps) {
   }
 
   return (
-    <article key={status.id} className='px-3 lg:px-6 py-5 border-b border-b-slate-100'>
+    <article key={status.id} className='px-3 lg:px-6 py-5 border-b border-b-slate-100 dark:border-b-slate-600'>
       <header className='flex'>
         <div className='mr-3 w-16 h-12'>
           <Image
@@ -44,7 +44,7 @@ export default async function StatusPage({ params }: StatusPageProps) {
           <div className='flex space-x-1 lg:space-x-2 items-center justify-between'>
             <div className='flex space-x-1 lg:space-x-2 items-center'>
               <a href='' className='flex flex-col text-black no-underline'>
-                <span className='font-semibold'>Josiah Wiebe</span>
+                <span className='font-semibold dark:text-slate-300'>Josiah Wiebe</span>
                 <span className='text-sm text-slate-400'>@josiahwiebe</span>
               </a>
             </div>
@@ -59,7 +59,7 @@ export default async function StatusPage({ params }: StatusPageProps) {
         </div>
       </header>
       <main className='flex mt-3'>
-        <p className='mt-2 text-2xl leading-8 break-words'>{status.content}</p>
+        <p className='mt-2 text-2xl leading-8 break-words dark:text-slate-300'>{status.content}</p>
       </main>
 
       <footer className='mt-4 flex space-x-1 lg:space-x-2 items-center'>

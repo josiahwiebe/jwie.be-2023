@@ -1,7 +1,6 @@
 'use client'
 import { useRouter } from 'next/navigation'
 import { FormEvent } from 'react'
-// import { useSession } from 'next-auth/client'
 
 async function createStatus(event: FormEvent<HTMLFormElement>, refresh: () => void) {
   event.preventDefault()
@@ -37,8 +36,9 @@ export default function ComposeStatusForm() {
       <div className='text-lg'>
         <textarea
           name='content'
-          rows={1}
-          className='w-full mt-3 outline-0 placeholder:text-xl text-xl resize-none focus:outline-none'
+          // rows={1}
+          wrap='hard'
+          className='w-full mt-3 p-2 outline-0 placeholder:text-xl text-xl dark:text-slate-300 dark:bg-zinc-900 resize-none focus:outline-none'
           placeholder="What's happening?"></textarea>
       </div>
       <div className='flex justify-end items-center mt-2'>

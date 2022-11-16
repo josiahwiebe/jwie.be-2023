@@ -33,21 +33,23 @@ export default async function PostPage({ params }: PostPageProps) {
   return (
     <article className='container pt-8 md:max-w-3xl md:pt-12 lg:pt-24'>
       <header className='flex flex-col space-y-4'>
-        <h1 className='md:leading-12 text-2xl font-bold leading-[1.2] sm:text-3xl md:text-5xl'>
+        <h1 className='md:leading-12 text-2xl font-bold leading-[1.2] sm:text-3xl md:text-5xl dark:text-slate-300'>
           {post.frontMatter.title}
         </h1>
-        {post.frontMatter.date && <p className='text-slate-800'>{formatDate(post.frontMatter.date)}</p>}
+        {post.frontMatter.date && (
+          <p className='text-slate-800 dark:text-slate-600'>{formatDate(post.frontMatter.date)}</p>
+        )}
       </header>
       <div className='pt-12 pb-8 md:pt-10 md:pb-8 lg:pt-12 lg:pb-12'>
-        <hr className='border-slate-100' />
+        <hr className='border-slate-100 dark:border-slate-600' />
       </div>
       {mdx && (
-        <div className='prose lg:prose-lg omax-w-none'>
+        <div className='prose lg:prose-lg max-w-none dark:text-slate-400'>
           <MdxContent source={mdx} />
         </div>
       )}
       <div className='pt-12 pb-8 md:pt-10 md:pb-8 lg:pt-12 lg:pb-12'>
-        <hr className='border-slate-100' />
+        <hr className='border-slate-100 dark:prose-invert' />
       </div>
     </article>
   )

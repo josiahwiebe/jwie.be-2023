@@ -30,15 +30,15 @@ export default async function BasicPage({ params }: PageProps) {
   return (
     <article className='container pt-8 md:max-w-3xl md:pt-12 lg:pt-24'>
       <header className='flex flex-col space-y-4'>
-        <h1 className='md:leading-12 text-2xl font-bold leading-[1.2] sm:text-3xl md:text-5xl'>
+        <h1 className='md:leading-12 text-2xl font-bold leading-[1.2] sm:text-3xl md:text-5xl dark:text-slate-300'>
           {page.frontMatter.title}
         </h1>
       </header>
       <div className='pt-12 pb-8 md:pt-10 md:pb-8 lg:pt-12 lg:pb-12'>
-        <hr className='border-slate-100' />
+        <hr className='border-slate-100 dark:border-slate-600' />
       </div>
       {mdx && (
-        <div className='prose lg:prose-lg max-w-none'>
+        <div className='prose lg:prose-lg max-w-none dark:prose-invert'>
           <MdxContent source={mdx} />
         </div>
       )}
