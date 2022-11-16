@@ -1,20 +1,43 @@
-import FeedLayout from '@components/feed-wrapper'
-import { Status } from '@lib/mdx/sources'
-import { formatDate } from '@lib/utils'
+import ComposeStatusForm from '@components/compose-status'
+import { db } from '@lib/db'
+import { formatDate, formatDateAndTime } from '@lib/utils'
+import { unstable_getServerSession } from 'next-auth/next'
 import Image from 'next/image'
 import Profile from '../../../public/static/avatar.jpg'
 
+async function getStatuses() {
+  return await db.status.findMany({
+    orderBy: {
+      createdAt: 'desc',
+    },
+  })
+}
+
 export default async function FeedPage() {
-  const statuses = await Status.getAllMdxNodes()
+  const statuses = await getStatuses()
+  const session = await unstable_getServerSession()
 
   return (
-    <FeedLayout>
+    <>
+      {session && (
+        <div className='flex mt-4 px-2 lg:px-4 pb-4 border-b border-b-slate-100'>
+          <div className='mr-3 w-16 h-12'>
+            <Image
+              src={Profile}
+              className='w-12 h-12 rounded-full overflow-hidden'
+              placeholder='blur'
+              alt='jwiebe'
+              priority
+            />
+          </div>
+          <ComposeStatusForm />
+        </div>
+      )}
       {statuses.map(status => {
-        const timeStamp = new Date(status.frontMatter.date).valueOf()
         return (
           <article key={status.slug} className=' border-b border-b-slate-100 cursor-pointer hover:bg-slate-100'>
             <a
-              href={`/status/${timeStamp}`}
+              href={`/status/${status.slug}`}
               className='status-link flex px-2 lg:px-4 py-5 no-underline text-current hover:text-current'>
               <div className='mr-3 w-16 h-12'>
                 <Image
@@ -33,7 +56,9 @@ export default async function FeedPage() {
                       <span className='text-slate-400'>@josiahwiebe</span>
                     </div>
                     <span className='text-slate-400'>•</span>
-                    <span className='text-slate-400'>{formatDate(status.frontMatter.date)}</span>
+                    <abbr className='text-slate-400' title={formatDateAndTime(status.createdAt.toString())}>
+                      {formatDate(status.createdAt.toString())}
+                    </abbr>
                   </header>
                   {/* <button>
                     <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
@@ -49,6 +74,6 @@ export default async function FeedPage() {
           </article>
         )
       })}
-    </FeedLayout>
+    </>
   )
 }

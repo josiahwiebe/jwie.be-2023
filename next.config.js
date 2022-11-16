@@ -3,6 +3,7 @@
 module.exports = {
   experimental: {
     appDir: true,
+    serverComponentsExternalPackages: ['prisma'],
   },
   reactStrictMode: true,
   webpack: (config, { dev, isServer }) => {
