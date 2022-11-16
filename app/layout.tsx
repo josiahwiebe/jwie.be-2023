@@ -31,8 +31,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </header>
         <main>{children}</main>
         <footer className='mt-12 pt-8 w-full'>
-          <div className='footer-byline'>
-            <p>&copy; 2011—{getYear()} Josiah Wiebe. All rights reserved.</p>
+          <div className='w-full block mt-16'>
+            <span className='text-xs text-gray-500 leading-5 block mt-4'>
+              &copy; 2011—{getYear()} Josiah Wiebe. All rights reserved.
+            </span>
           </div>
         </footer>
       </body>

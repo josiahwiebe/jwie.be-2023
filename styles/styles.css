@@ -46,23 +46,3 @@ a:hover {
   color: unset;
   text-decoration: none;
 }
-
-.footer-byline {
-  width: 100%;
-  display: block;
-  margin-top: 4rem;
-  clear: both;
-
-  @media screen and (min-width: 30em) {
-    float: left;
-    display: inline;
-  }
-
-  p {
-    font-size: 0.75rem;
-    color: #777;
-    line-height: 1.5;
-    display: block;
-    margin-top: 1rem;
-  }
-}
