@@ -1,6 +1,7 @@
 import '@styles/styles.css'
 import Link from 'next/link'
 import Image from 'next/image'
+import { AnalyticsWrapper } from '../components/analytics'
 import Profile from '../public/static/avatar.jpg'
 
 const getYear = () => {
@@ -37,6 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </span>
           </div>
         </footer>
+        <AnalyticsWrapper />
       </body>
     </html>
   )

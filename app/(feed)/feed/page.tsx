@@ -53,7 +53,7 @@ export default async function FeedPage() {
               <div className='w-full'>
                 <div className='flex space-x-1 lg:space-x-2 items-center justify-between'>
                   <header className='flex space-x-1 lg:space-x-2 items-center'>
-                    <div className='flex space-x-1 lg:space-x-2 items-center text-black no-underline'>
+                    <div className='flex flex-col md:flex-row space-x-1 lg:space-x-2 items-center text-black no-underline'>
                       <span className='font-semibold dark:text-slate-300'>Josiah Wiebe</span>
                       <span className='text-slate-400'>@josiahwiebe</span>
                     </div>
