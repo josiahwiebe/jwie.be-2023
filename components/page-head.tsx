@@ -20,6 +20,8 @@ export default function PageHead({ params = { title: '', excerpt: '', overrideTi
       <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
       <meta name='viewport' content='width=device-width, initial-scale=1' />
       <meta name='theme-color' content='#f2787c' />
+      <link rel='alternate' type='application/rss+xml' title='RSS Feed for jwie.be' href='/feed.xml' />
+      <link rel='alternate' type='application/json' title='JSON Feed for jwie.be' href='/feed.json' />
       <link rel='icon' href='/favicon.ico' />
       <link rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png' />
       <link rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png' />
