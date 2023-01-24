@@ -36,11 +36,12 @@ export function createSource<T extends z.ZodType>(source: Source<T>) {
   const { contentPath, basePath, sortBy, sortOrder } = source
 
   async function getMdxFiles() {
-    const files = await glob(`${contentPath}/**/*.{md,mdx}`)
+    const resolvedContentPath = path.resolve('./content', contentPath.split('/')[1])
+    const files = await glob(`${resolvedContentPath}/**/*.{md,mdx}`)
 
     return files.map(filepath => {
       let slug = filepath
-        .replace(contentPath, '')
+        .replace(resolvedContentPath, '')
         .replace(/^\/+/, '')
         .replace(new RegExp(path.extname(filepath) + '$'), '')
 

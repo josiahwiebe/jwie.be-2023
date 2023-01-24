@@ -17,8 +17,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     link: 'https://jwie.be/blog',
     generator: 'Next.js',
     feedLinks: {
-      json: 'https://jwie.be/blog.json',
-      rss: 'https://jwie.be/blog.xml',
+      json: 'https://jwie.be/feed.json',
+      rss: 'https://jwie.be/feed.xml',
     },
   })
 
@@ -36,14 +36,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     const html = renderToString(Component)
 
+    console.log(post)
+
     feed.addItem({
       content: html,
       title: post.frontMatter.title,
       date: new Date(post.frontMatter.date),
-      link: `https://jwie.be/blog/${post.slug}`,
+      link: `https://jwie.be/${post.url}`,
     })
   }
 
-  res.setHeader('content-type', 'application/rss+xml')
+  res.setHeader('content-type', 'application/xml')
   res.status(200).end(feed.rss2())
 }
