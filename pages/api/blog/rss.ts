@@ -11,7 +11,7 @@ import remarkPrism from 'remark-prism'
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const feed = new Feed({
     id: 'https://jwie.be/blog',
-    title: 'Josiah Wiebe - Blog',
+    title: 'Josiah Wiebe — Blog',
     copyright: `2011-${new Date().getFullYear()} Josiah Wiebe`,
     description: 'Feed of blog posts from jwie.be',
     link: 'https://jwie.be/blog',
@@ -35,8 +35,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const Component = createElement(MDXRemote, { ...mdx, components: MDXComponents })
 
     const html = renderToString(Component)
-
-    console.log(post)
 
     feed.addItem({
       content: html,
