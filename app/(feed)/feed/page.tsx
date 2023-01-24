@@ -3,7 +3,7 @@ import { db } from '@lib/db'
 import { formatDate, formatDateAndTime } from '@lib/utils'
 import { unstable_getServerSession } from 'next-auth/next'
 import Image from 'next/image'
-import Profile from '../../../public/static/avatar.jpg'
+import Profile from '../../../public/avatar.jpg'
 
 async function getStatuses() {
   return await db.status.findMany({

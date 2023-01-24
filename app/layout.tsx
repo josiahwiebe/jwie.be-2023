@@ -12,17 +12,17 @@ const getYear = () => {
 const vulfSans = localFont({
   src: [
     {
-      path: '../public/static/fonts/Vulf_Sans-Regular.woff2',
+      path: '../public/fonts/Vulf_Sans-Regular.woff2',
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../public/static/fonts/Vulf_Sans-Italic.woff2',
+      path: '../public/fonts/Vulf_Sans-Italic.woff2',
       weight: '400',
       style: 'italic',
     },
     {
-      path: '../public/static/fonts/Vulf_Sans-Bold.woff2',
+      path: '../public/fonts/Vulf_Sans-Bold.woff2',
       weight: '700',
       style: 'normal',
     },

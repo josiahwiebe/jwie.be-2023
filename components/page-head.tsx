@@ -20,10 +20,10 @@ export default function PageHead({ params = { title: '', excerpt: '', overrideTi
       <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
       <meta name='viewport' content='width=device-width, initial-scale=1' />
       <meta name='theme-color' content='#f2787c' />
-      <link rel='icon' href='/static/favicon.ico' />
-      <link rel='icon' type='image/png' sizes='16x16' href='/static/favicon-16x16.png' />
-      <link rel='icon' type='image/png' sizes='32x32' href='/static/favicon-32x32.png' />
-      <link rel='apple-touch-icon' href='/static/apple-touch-icon.png' />
+      <link rel='icon' href='/favicon.ico' />
+      <link rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png' />
+      <link rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png' />
+      <link rel='apple-touch-icon' href='/apple-touch-icon.png' />
       <meta name='twitter:site' content='@josiahwiebe' />
       <link rel='me authn' href='https://github.com/josiahwiebe' />
       <link rel='me' href='https://twitter.com/josiahwiebe' />

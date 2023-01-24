@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import { formatDateAndTime } from '@lib/utils'
 import Image from 'next/image'
-import Profile from '../../../../public/static/avatar.jpg'
+import Profile from '../../../../public/avatar.jpg'
 import { db } from '@lib/db'
 
 async function getStatus(slug: string) {
