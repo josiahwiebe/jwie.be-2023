@@ -1,18 +1,24 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import { Feed } from 'feed'
 import { Blog, Logbook } from '@lib/mdx/sources'
-import { marked } from 'marked'
+import { serialize } from 'next-mdx-remote/serialize'
+import remarkPrism from 'remark-prism'
+import { createElement } from 'react'
+import { MDXRemote } from 'next-mdx-remote'
+import mdxComponents from '@components/mdx-components'
+import { renderToString } from 'react-dom/server'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const feed = new Feed({
-    id: 'https://jwie.be/feed',
+    id: 'https://jwie.be/blog',
     title: 'Josiah Wiebe — Blog',
     copyright: `2011-${new Date().getFullYear()} Josiah Wiebe`,
+    description: 'Feed of blog posts from jwie.be',
     link: 'https://jwie.be/blog',
     generator: 'Next.js',
     feedLinks: {
       json: 'https://jwie.be/blog.json',
-      rss: 'https://jwie.be/blog.rss',
+      rss: 'https://jwie.be/blog.xml',
     },
   })
 
@@ -21,15 +27,23 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   const allPosts = [...posts, ...logbook]
 
-  allPosts.forEach(post => {
-    const html = marked.parse(post.content)
+  for await (const post of allPosts) {
+    const mdx = await serialize(post.content, {
+      mdxOptions: {
+        remarkPlugins: [remarkPrism],
+      },
+    })
+    const Component = createElement(MDXRemote, { ...mdx, components: mdxComponents })
+
+    const html = renderToString(Component)
+
     feed.addItem({
       content: html,
       title: post.frontMatter.title,
       date: new Date(post.frontMatter.date),
       link: `https://jwie.be/blog/${post.slug}`,
     })
-  })
+  }
 
   res.setHeader('content-type', 'application/json')
   res.status(200).end(feed.json1())

@@ -7,11 +7,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     id: 'https://jwie.be/feed',
     title: 'Josiah Wiebe — Feed',
     copyright: `2011—${new Date().getFullYear()} Josiah Wiebe`,
+    description: 'Feed of status updates from jwie.be',
     link: 'https://jwie.be/feed',
     generator: 'Next.js',
     feedLinks: {
       json: 'https://jwie.be/feed.json',
-      rss: 'https://jwie.be/feed.rss',
+      rss: 'https://jwie.be/feed.xml',
     },
   })
 
