@@ -111,15 +111,23 @@ export function createSource<T extends z.ZodType>(source: Source<T>) {
     )
 
     const adjust = sortOrder === 'desc' ? -1 : 1
-    return nodes.sort((a, b) => {
-      if (a.frontMatter[sortBy] < b.frontMatter[sortBy]) {
-        return -1 * adjust
-      }
-      if (a.frontMatter[sortBy] > b.frontMatter[sortBy]) {
-        return 1 * adjust
-      }
-      return 0
-    })
+    return nodes
+      .filter(x => {
+        if (process.env.NODE_ENV !== 'development') {
+          return x.frontMatter.published !== false
+        } else {
+          return true
+        }
+      })
+      .sort((a, b) => {
+        if (a.frontMatter[sortBy] < b.frontMatter[sortBy]) {
+          return -1 * adjust
+        }
+        if (a.frontMatter[sortBy] > b.frontMatter[sortBy]) {
+          return 1 * adjust
+        }
+        return 0
+      })
   }
 
   return {

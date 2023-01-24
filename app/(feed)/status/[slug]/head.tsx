@@ -1,3 +1,4 @@
+import PageHead from '@components/page-head'
 import { db } from '@lib/db'
 
 export async function getStatus(slug: string) {
@@ -20,12 +21,6 @@ export interface StatusPageProps {
 export default async function Head({ params }: StatusPageProps) {
   const status = await getStatus(params.slug)
   return (
-    <>
-      <meta charSet='utf-8' />
-      <title>{`@josiahwiebe: ${status.content}`}</title>
-      <meta name='description' content='' />
-      <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
-      <meta name='viewport' content='width=device-width, initial-scale=1' />
-    </>
+    <PageHead params={{ title: `@josiahwiebe: ${status.content}`, overrideTitle: true, excerpt: status.content }} />
   )
 }

@@ -20,7 +20,7 @@ export default async function FeedPage() {
   return (
     <>
       {session && (
-        <div className='flex mt-4 px-2 lg:px-4 pb-4 border-b border-b-slate-100 dark:border-b-slate-600'>
+        <div className='flex col-span-full mt-4 px-2 lg:px-4 pb-4 border-b border-b-slate-100 dark:border-b-slate-600'>
           <div className='mr-3 w-16 h-12'>
             <Image
               src={Profile}
