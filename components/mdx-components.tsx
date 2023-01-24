@@ -11,6 +11,7 @@ function Image({ src, width = 700, height = 475, alt, contain, ...props }) {
           width: contain ? `${width}px` : '100%',
           height: contain ? `${height}px` : 'auto',
         }}
+        placeholder='blur'
         src={src}
         alt={alt}
         {...props}
@@ -30,6 +31,7 @@ function ImageWithCaption({ src, width = 700, height = 475, alt, children, ...pr
           width: '100%',
           height: 'auto',
         }}
+        placeholder='blur'
         src={src}
         alt={alt}
         {...props}
