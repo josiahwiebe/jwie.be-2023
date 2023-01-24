@@ -21,6 +21,8 @@ interface StatusPageProps {
   }
 }
 
+export const dynamic = 'force-dynamic'
+
 export default async function StatusPage({ params }: StatusPageProps) {
   const status = await getStatus(params.slug)
 
