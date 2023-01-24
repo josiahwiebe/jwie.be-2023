@@ -16,6 +16,29 @@ export const authOptions: NextAuthOptions = {
       authorization: { params: { scope: 'users.read tweet.read tweet.write offline.access' } },
       version: '2.0',
     }),
+    {
+      id: 'mastodon',
+      name: 'Mastodon',
+      type: 'oauth',
+      version: '2.0',
+      clientId: process.env.MASTODON_CLIENT_ID as string,
+      clientSecret: process.env.MASTODON_CLIENT_SECRET as string,
+      profile(profile) {
+        console.log('profile', profile)
+        return {
+          id: profile.id,
+          name: profile.username,
+          email: profile.email,
+          image: profile.avatar,
+        }
+      },
+      authorization: {
+        url: 'https://mastodon.social/oauth/authorize',
+        params: { scope: 'read write' },
+      },
+      token: 'https://mastodon.social/oauth/token',
+      userinfo: 'https://mastodon.social/api/v1/accounts/verify_credentials',
+    },
   ],
   callbacks: {
     async jwt({ token, account }) {
@@ -33,7 +56,8 @@ export const authOptions: NextAuthOptions = {
       return session
     },
     async signIn({ user }) {
-      if (user?.email === 'josiah@hey.com') {
+      console.log('signIn', user)
+      if (user?.email === 'josiah@hey.com' || user?.name === 'josiahwiebe') {
         return true
       }
       return '/denied'

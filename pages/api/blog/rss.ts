@@ -1,13 +1,13 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import { Feed } from 'feed'
-import { Blog } from '@lib/mdx/sources'
+import { Blog, Logbook } from '@lib/mdx/sources'
 import { marked } from 'marked'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const feed = new Feed({
     id: 'https://jwie.be/feed',
-    title: 'Josiah Wiebe — Blog',
-    copyright: `2011—${new Date().getFullYear()} Josiah Wiebe`,
+    title: 'Josiah Wiebe - Blog',
+    copyright: `2011-${new Date().getFullYear()} Josiah Wiebe`,
     link: 'https://jwie.be/blog',
     generator: 'Next.js',
     feedLinks: {
@@ -17,8 +17,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   })
 
   const posts = await Blog.getAllMdxNodes()
+  const logbook = await Logbook.getAllMdxNodes()
+  const allPosts = [...posts, ...logbook]
 
-  posts.forEach(post => {
+  allPosts.forEach(post => {
     const html = marked.parse(post.content)
     feed.addItem({
       content: html,

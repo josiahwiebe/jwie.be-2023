@@ -9,19 +9,19 @@ module.exports = {
   async rewrites() {
     return [
       {
-        source: '/feed.json',
+        source: '/status.json',
         destination: '/api/feed/json',
       },
       {
-        source: '/feed.rss',
+        source: '/status.xml',
         destination: '/api/feed/rss',
       },
       {
-        source: '/blog.json',
+        source: '/feed.json',
         destination: '/api/blog/json',
       },
       {
-        source: '/blog.rss',
+        source: '/feed.xml',
         destination: '/api/blog/rss',
       },
     ]
