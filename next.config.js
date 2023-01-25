@@ -17,12 +17,8 @@ module.exports = {
         destination: '/api/feed/rss',
       },
       {
-        source: '/feed.json',
-        destination: '/api/blog/json',
-      },
-      {
-        source: '/feed.xml',
-        destination: '/api/blog/rss',
+        source: '/rss',
+        destination: '/feed.xml',
       },
     ]
   },

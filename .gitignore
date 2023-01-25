@@ -8,6 +8,10 @@ build
 dist
 .next
 
+## generated static files
+public/feed.xml
+public/feed.json
+
 # misc
 .DS_Store
 .env
