@@ -1,4 +1,4 @@
-import Image from 'next/image'
+export const runtime = 'experimental-edge'
 
 export default async function IndexPage() {
   return (
