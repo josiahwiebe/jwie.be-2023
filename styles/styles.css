@@ -5,6 +5,7 @@
 :root {
   --color-black: #000;
   --color-primary: hsla(358, 82%, 71%, 1);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
   --tw-prose-links: var(--color-primary);
   --grid-gap: 1.5rem;
   --grid-gap-2x: calc(var(--grid-gap) * 2);

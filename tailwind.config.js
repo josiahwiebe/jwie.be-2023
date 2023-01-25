@@ -10,6 +10,7 @@ module.exports = {
       fontFamily: {
         heading: ['var(--font-heading)', ...defaultTheme.fontFamily.sans],
         body: defaultTheme.fontFamily.sans,
+        mono: ['var(--font-mono)', ...defaultTheme.fontFamily.mono],
       },
       colors: {
         primary: 'var(--color-primary)',

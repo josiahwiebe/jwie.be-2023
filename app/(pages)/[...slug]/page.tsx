@@ -1,9 +1,10 @@
 import { notFound } from 'next/navigation'
-
 import { Page } from '@lib/mdx/sources'
-import { MdxContent } from '@components/mdx-content'
-import { serialize } from 'next-mdx-remote/serialize'
+// import { MdxContent } from '@components/mdx-content'
 import PageHeader from '@components/page-header'
+
+import { MDXRemote } from 'next-mdx-remote/rsc'
+import mdxComponents from '@components/mdx-components'
 
 interface PageProps {
   params: {
@@ -26,17 +27,15 @@ export default async function BasicPage({ params }: PageProps) {
     notFound()
   }
 
-  const mdx = await serialize(page.content)
-
   return (
     <>
       <PageHeader title={page.frontMatter.title} subtitle={page.frontMatter.subtitle} />
       <article className='page-content'>
-        {mdx && (
-          <div className='prose lg:prose-lg dark:prose-invert'>
-            <MdxContent source={mdx} />
-          </div>
-        )}
+        <div className='prose lg:prose-lg dark:prose-invert'>
+          {/* @ts-expect-error Server Component */}
+          <MDXRemote source={page.content} components={mdxComponents} />
+          {/* <MdxContent source={page.content} /> */}
+        </div>
       </article>
     </>
   )
