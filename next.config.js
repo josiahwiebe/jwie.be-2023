@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 
 module.exports = {
+  swcMinify: true,
   experimental: {
     appDir: true,
     serverComponentsExternalPackages: ['prisma'],
@@ -19,6 +20,15 @@ module.exports = {
       {
         source: '/rss',
         destination: '/feed.xml',
+      },
+    ]
+  },
+  async redirects() {
+    return [
+      {
+        source: '/rss',
+        destination: '/feed.xml',
+        permanent: true,
       },
     ]
   },
