@@ -8,6 +8,7 @@ import PageHeader from '@components/page-header'
 
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import mdxComponents from '@components/mdx-components'
+import { rehypeMeta } from '@lib/rehype-mdx-code-meta'
 
 interface PostPageProps {
   params: {
@@ -41,7 +42,7 @@ export default async function PostPage({ params }: PostPageProps) {
           <MDXRemote
             source={post.content}
             components={mdxComponents}
-            options={{ mdxOptions: { rehypePlugins: [rehypePrism] } }}
+            options={{ mdxOptions: { rehypePlugins: [rehypePrism, rehypeMeta] } }}
           />
           {/* <MdxContent source={post.content} options={{ mdxOptions: { rehypePlugins: [rehypePrism] } }} /> */}
         </div>
