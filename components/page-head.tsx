@@ -14,7 +14,6 @@ export default function PageHead({ params = { title: '', excerpt: '', overrideTi
     <>
       <meta charSet='utf-8' />
       <title>{title}</title>
-      <meta name='description' content='' />
       <meta property='og:site_name' content='Josiah Wiebe' />
       {excerpt && <meta name='description' content={excerpt} />}
       <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
