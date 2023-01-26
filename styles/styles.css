@@ -147,6 +147,11 @@ body {
   }
 }
 
+.prose li p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .prose figure,
 .prose img {
   margin-top: 0;
@@ -163,35 +168,6 @@ figcaption p,
   margin-top: var(--grid-gap);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-
-  ul {
-    list-style: none;
-  }
-
-  li {
-    list-style: none;
-  }
-
-  li::before {
-    content: '• ';
-    @apply text-slate-300;
-  }
-
-  a,
-  .prose a {
-    color: transparent;
-  }
-
-  a:hover,
-  .prose a:hover {
-    text-decoration: underline;
-  }
-}
-
 img {
   max-width: 100%;
   height: auto;
@@ -206,9 +182,19 @@ a {
     hsla(358, 82%, 71%, 1) 100%
   );
   background-clip: text;
-  border: none;
-  text-decoration: underline;
+  text-decoration: none;
   transition: color 120ms ease-in-out;
+}
+
+.prose a {
+  border-bottom: 1px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(
+    135deg,
+    hsla(55, 61%, 85%, 1) 0%,
+    hsla(196, 79%, 79%, 1) 50%,
+    hsla(358, 82%, 71%, 1) 100%
+  );
 }
 
 a:hover {
@@ -216,7 +202,52 @@ a:hover {
   transition: color 120ms ease-in-out;
 }
 
+.prose a {
+  text-decoration: none;
+}
+
+.prose a:hover code {
+  color: transparent;
+}
+
 .status-link a {
   color: unset;
   text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+
+  .site-nav a.is-active {
+    color: var(--color-primary);
+  }
+
+  a,
+  .prose a {
+    color: transparent;
+  }
+
+  .prose a {
+    border-bottom: 1px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(
+      135deg,
+      hsla(55, 61%, 85%, 1) 0%,
+      hsla(196, 79%, 79%, 1) 50%,
+      hsla(358, 82%, 71%, 1) 100%
+    );
+  }
+
+  code,
+  .prose code {
+    color: var(--tw-prose-invert-code);
+  }
+
+  a:not(.site-title *):hover,
+  .prose a:hover,
+  .prose a:hover code {
+    color: var(--color-primary);
+  }
 }

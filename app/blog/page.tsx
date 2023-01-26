@@ -19,11 +19,15 @@ export default async function BlogPage() {
                   {post.frontMatter.title}
                 </h2>
               </Link>
-              {post.frontMatter.date && <p className='text-sm text-slate-600'>{formatDate(post.frontMatter.date)}</p>}
+              {post.frontMatter.date && (
+                <p className='text-sm text-slate-600 dark:text-slate-400'>{formatDate(post.frontMatter.date)}</p>
+              )}
             </div>
-            {post.frontMatter.excerpt && <p className='text-slate-600'>{post.frontMatter.excerpt}</p>}
+            {post.frontMatter.excerpt && (
+              <p className='text-slate-600 dark:text-slate-400'>{post.frontMatter.excerpt}</p>
+            )}
             <div className='py-8 md:py-10 lg:py-12'>
-              <hr className='border-slate-100 dark:border-slate-600' />
+              <hr className='border-slate-100 dark:border-slate-700' />
             </div>
           </article>
         ))}

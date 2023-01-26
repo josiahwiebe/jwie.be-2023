@@ -46,7 +46,7 @@ export default async function PostPage({ params }: PostPageProps) {
           {/* <MdxContent source={post.content} options={{ mdxOptions: { rehypePlugins: [rehypePrism] } }} /> */}
         </div>
         <div className='pt-12 pb-8 md:pt-10 md:pb-8 lg:pt-12 lg:pb-12'>
-          <hr className='border-slate-100 dark:prose-invert' />
+          <hr className='border-slate-100 dark:border-slate-700' />
         </div>
       </article>
     </>

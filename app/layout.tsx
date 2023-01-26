@@ -68,15 +68,28 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className='grid-row site-content'>{children}</main>
         <footer className='grid-row'>
           <div className='footer-content'>
-            <div className='text-xs text-gray-500 leading-5 block mt-4 space-x-2'>
-              <a href='/feed.xml' className='text-gray-500 no-underline'>
+            <div className='text-xs text-gray-500 leading-5 mt-4 space-x-3 flex items-center'>
+              <a href='/feed.xml' className='text-gray-500 dark:text-slate-400 no-underline hover:no-underline'>
                 RSS
               </a>
-              <a href='/feed.json' className='text-gray-500 no-underline'>
+              <a href='/feed.json' className='text-gray-500 dark:text-slate-400 no-underline hover:no-underline'>
                 JSON
               </a>
+              <span className='w-full h-1 mt-1 inline-flex border-t border-gray-200 dark:border-slate-700'></span>
+              <a
+                href='https://mastodon.social/@josiahwiebe'
+                className='text-gray-500 dark:text-slate-400 no-underline hover:no-underline'>
+                Mastodon
+              </a>
+              <a
+                href='https://instagram.com/josiahwiebe'
+                className='text-gray-500 dark:text-slate-400 no-underline hover:no-underline'>
+                Instagram
+              </a>
             </div>
-            <span className='text-xs text-gray-500 leading-5 block mt-4'>&copy; 2011—{getYear()}</span>
+            <span className='text-xs text-gray-500 dark:text-slate-400 leading-5 block mt-4'>
+              &copy; 2011—{getYear()}
+            </span>
           </div>
         </footer>
         <AnalyticsWrapper />
