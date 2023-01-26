@@ -5,6 +5,7 @@
 :root {
   --color-black: #000;
   --color-primary: hsla(358, 82%, 71%, 1);
+  --color-code: #2e3440;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
   --tw-prose-links: var(--color-primary);
   --grid-gap: 1.5rem;
@@ -59,7 +60,7 @@ body {
 
 .grid-row {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   grid-gap: var(--grid-gap);
   padding: 0 1rem;
   width: 90%;
@@ -67,7 +68,7 @@ body {
   margin: 0 auto;
 
   @media screen and (min-width: 60rem) {
-    grid-template-columns: 2fr 5fr;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 5fr);
     grid-gap: var(--grid-gap-2x);
   }
 }
@@ -243,6 +244,11 @@ a:hover {
   code,
   .prose code {
     color: var(--tw-prose-invert-code);
+  }
+
+  strong,
+  .prose strong {
+    color: var(--tw-prose-invert-bold);
   }
 
   a:not(.site-title *):hover,

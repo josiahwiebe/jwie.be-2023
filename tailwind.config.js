@@ -20,6 +20,7 @@ module.exports = {
         darkgrey: 'var(--color-darkgrey)',
         mediumgrey: 'var(--color-mediumgrey)',
         lightgrey: 'var(--color-lightgrey)',
+        code: 'var(--color-code)',
       },
       backgroundImage: {
         'gradient-primary':
