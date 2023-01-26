@@ -146,7 +146,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 Note the `{children}` prop. This is where the content for each page will be rendered.
 
-Next, I created the `page.tsx` file for the root route. This will be our index page. Just like a normal React component, this file should simply export a React component.
+Next, I created the `page.tsx` file for the root route. This will be our index page. Just like the convention for the previous `pages` directory, this file should simply export a React component.
 
 ```tsx filename="app/page.tsx"
 export default async function IndexPage() {
@@ -201,3 +201,5 @@ Since we'll want each page to have a unique title, we'll have to create a `head.
 That's all for the base layout and index page. At this point, we should have a functioning site.
 
 In my next post, I'll walk through the method I used to setup the blog and pages routes. I'll also show you how I use `next-mdx-remote` to render the blog posts and pages, combined with the power of dynamic catch-all route segments.
+
+To keep up to date with my latest posts, you can follow me on [Twitter](https://twitter.com/josiahwiebe) or [Mastodon](https://mastodon.social/@josiahwiebe), or subscribe to my [RSS feed](https://jwie.be/feed.xml).
