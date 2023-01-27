@@ -1,35 +1,13 @@
 import '@styles/nord.css'
-import { notFound } from 'next/navigation'
 import rehypePrism from '@mapbox/rehype-prism'
-import { Logbook } from '@lib/mdx/sources'
-import { formatDate } from '@lib/utils'
 import PageHeader from '@components/page-header'
+import { formatDate } from '@lib/utils'
 // import { MdxContent } from '@components/mdx-content'
 
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import mdxComponents from '@components/mdx-components'
 
-interface LogbookPageProps {
-  params: {
-    slug: string[]
-  }
-}
-
-export async function generateStaticParams(): Promise<LogbookPageProps['params'][]> {
-  const files = await Logbook.getMdxFiles()
-
-  return files?.map(file => ({
-    slug: file.slug.split('/'),
-  }))
-}
-
-export default async function PostPage({ params }: LogbookPageProps) {
-  const post = await Logbook.getMdxNode(params?.slug)
-
-  if (!post) {
-    notFound()
-  }
-
+export default function PostLayout({ post }: { post: any }) {
   return (
     <>
       <PageHeader title={post.frontMatter.title} subtitle={formatDate(post.frontMatter.date)} />

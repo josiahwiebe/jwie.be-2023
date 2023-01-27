@@ -24,12 +24,17 @@ export async function generateFeed({ posts, outDir }) {
   })
 
   for await (const post of posts) {
-    const mdx = await serialize(post.content, {
-      mdxOptions: {
-        remarkPlugins: [remarkPrism],
-        rehypePlugins: [rehypePrism],
+    const mdx = await serialize(
+      post.content,
+      {
+        parseFrontmatter: true,
+        mdxOptions: {
+          remarkPlugins: [remarkPrism],
+          rehypePlugins: [rehypePrism],
+        },
       },
-    })
+      false
+    )
     const Component = createElement(MDXRemote, { ...mdx, components: mdxComponents })
 
     const html = renderToString(Component)

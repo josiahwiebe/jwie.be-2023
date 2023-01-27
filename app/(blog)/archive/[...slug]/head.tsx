@@ -1,8 +1,8 @@
 import PageHead from '@components/page-head'
-import { Logbook } from '@lib/mdx/sources'
+import { Archive } from '@lib/mdx/sources'
 
 export default async function Head({ params }) {
-  const post = await Logbook.getMdxNode(params?.slug)
+  const post = await Archive.getMdxNode(params?.slug)
 
   if (!post) {
     return null

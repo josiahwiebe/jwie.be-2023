@@ -1,0 +1,62 @@
+[
+  {
+    "source": "/writing",
+    "destination": "/blog",
+    "permanent": true
+  },
+  {
+    "source": "/rss",
+    "destination": "/feed.xml",
+    "permanent": true
+  },
+  {
+    "source": "/writing/field-notes-arts-sciences",
+    "destination": "/archive/field-notes-arts-sciences",
+    "permanent": true
+  },
+  {
+    "source": "/writing/building-the-newsprint",
+    "destination": "/archive/building-the-newsprint",
+    "permanent": true
+  },
+  {
+    "source": "/writing/choosing-a-web-presence",
+    "destination": "/archive/choosing-a-web-presence",
+    "permanent": true
+  },
+  {
+    "source": "/writing/homescreen-august-2011-2014",
+    "destination": "/archive/homescreen-august-2011-2014",
+    "permanent": true
+  },
+  {
+    "source": "/writing/launch-center-pro-daily-journaling",
+    "destination": "/archive/launch-center-pro-daily-journaling",
+    "permanent": true
+  },
+  {
+    "source": "/writing/launch-center-pro-updated",
+    "destination": "/archive/launch-center-pro-updated",
+    "permanent": true
+  },
+  {
+    "source": "/writing/short-hiatus",
+    "destination": "/archive/short-hiatus",
+    "permanent": true
+  },
+  {
+    "source": "/writing/using-two-factor-authentication",
+    "destination": "/archive/using-two-factor-authentication",
+    "permanent": true
+  },
+  {
+    "source": "/writing/west-coast-vancouver-day-one",
+    "destination": "/archive/west-coast-vancouver-day-one",
+    "permanent": true
+  },
+  {
+    "source": "/writing/homescreen-2015",
+    "destination": "/archive/homescreen-2015",
+    "permanent": true
+  }
+]

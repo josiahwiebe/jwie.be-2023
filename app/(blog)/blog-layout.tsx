@@ -1,14 +1,11 @@
-import Link from 'next/link'
-import PageHeader from '@components/page-header'
-import { Logbook } from '@lib/mdx/sources'
 import { formatDate } from '@lib/utils'
+import Link from 'next/link'
+import PageHeader from '../../components/page-header'
 
-export default async function LogbookPage() {
-  const posts = await Logbook.getAllMdxNodes()
-
+export default function BlogLayout({ title, subtitle, posts }: { title: string; subtitle: string; posts: any[] }) {
   return (
     <>
-      <PageHeader title='Logbook' subtitle='Records of things.' />
+      <PageHeader title={title} subtitle={subtitle} />
       <div className='page-content'>
         {posts.map(post => (
           <article key={post.slug} className='flex flex-col space-y-4'>

@@ -24,12 +24,6 @@ module.exports = {
     ]
   },
   async redirects() {
-    return [
-      {
-        source: '/rss',
-        destination: '/feed.xml',
-        permanent: true,
-      },
-    ]
+    return require('./redirects.json')
   },
 }

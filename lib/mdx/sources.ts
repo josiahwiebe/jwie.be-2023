@@ -27,6 +27,19 @@ export const Logbook = createSource({
   }),
 })
 
+export const Archive = createSource({
+  contentPath: 'content/archive',
+  basePath: '/archive',
+  sortBy: 'date',
+  sortOrder: 'desc',
+  frontMatter: z.object({
+    title: z.string(),
+    date: z.string(),
+    excerpt: z.string().optional(),
+    published: z.boolean().optional(),
+  }),
+})
+
 export const Page = createSource({
   contentPath: 'content/pages',
   basePath: '/',

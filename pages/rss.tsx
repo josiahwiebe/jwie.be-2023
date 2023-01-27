@@ -1,10 +1,14 @@
 import { generateFeed } from '@lib/feed'
-import { Blog, Logbook } from '@lib/mdx/sources'
+import { Archive, Blog, Logbook } from '@lib/mdx/sources'
 import path from 'path'
 
 export async function getStaticProps() {
-  const [posts, logbook] = await Promise.all([Blog.getAllMdxNodes(), Logbook.getAllMdxNodes()])
-  const allPosts = [...posts, ...logbook]
+  const [posts, logbook, archive] = await Promise.all([
+    Blog.getAllMdxNodes(),
+    Logbook.getAllMdxNodes(),
+    Archive.getAllMdxNodes(),
+  ])
+  const allPosts = [...posts, ...logbook, ...archive]
   const output = path.join(process.cwd(), 'public')
   await generateFeed({
     posts: allPosts,
