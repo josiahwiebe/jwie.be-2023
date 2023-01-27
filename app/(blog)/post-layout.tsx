@@ -1,11 +1,10 @@
 import '@styles/nord.css'
-import rehypePrism from '@mapbox/rehype-prism'
 import PageHeader from '@components/page-header'
 import { formatDate } from '@lib/utils'
 // import { MdxContent } from '@components/mdx-content'
-
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import mdxComponents from '@components/mdx-components'
+import rehypePrettyCode from 'rehype-pretty-code'
 
 export default function PostLayout({ post }: { post: any }) {
   return (
@@ -17,7 +16,7 @@ export default function PostLayout({ post }: { post: any }) {
           <MDXRemote
             source={post.content}
             components={mdxComponents}
-            options={{ mdxOptions: { rehypePlugins: [rehypePrism] } }}
+            options={{ mdxOptions: { rehypePlugins: [[rehypePrettyCode, { theme: 'nord' }]] } }}
           />
           {/* <MdxContent source={post.content} options={{ mdxOptions: { rehypePlugins: [rehypePrism] } }} /> */}
         </div>

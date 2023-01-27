@@ -2,11 +2,11 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import { Feed } from 'feed'
 import { Blog, Logbook } from '@lib/mdx/sources'
 import { serialize } from 'next-mdx-remote/serialize'
-import remarkPrism from 'remark-prism'
 import { createElement } from 'react'
 import { MDXRemote } from 'next-mdx-remote'
 import mdxComponents from '@components/mdx-components'
 import { renderToString } from 'react-dom/server'
+import rehypePrettyCode from 'rehype-pretty-code'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const feed = new Feed({
@@ -30,7 +30,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   for await (const post of allPosts) {
     const mdx = await serialize(post.content, {
       mdxOptions: {
-        remarkPlugins: [remarkPrism],
+        remarkPlugins: [[rehypePrettyCode, { theme: 'nord' }]],
       },
     })
     const Component = createElement(MDXRemote, { ...mdx, components: mdxComponents })

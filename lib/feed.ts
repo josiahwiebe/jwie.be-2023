@@ -1,8 +1,7 @@
 import fs from 'fs'
 import { Feed } from 'feed'
 import { serialize } from 'next-mdx-remote/serialize'
-import remarkPrism from 'remark-prism'
-import rehypePrism from '@mapbox/rehype-prism'
+import rehypePrettyCode from 'rehype-pretty-code'
 
 import { createElement } from 'react'
 import { MDXRemote } from 'next-mdx-remote'
@@ -29,8 +28,8 @@ export async function generateFeed({ posts, outDir }) {
       {
         parseFrontmatter: true,
         mdxOptions: {
-          remarkPlugins: [remarkPrism],
-          rehypePlugins: [rehypePrism],
+          remarkPlugins: [],
+          rehypePlugins: [[rehypePrettyCode, { theme: 'nord' }]],
         },
       },
       false

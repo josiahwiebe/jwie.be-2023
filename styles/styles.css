@@ -257,3 +257,16 @@ a:hover {
     color: var(--color-primary);
   }
 }
+
+.prose pre {
+  margin-top: 0;
+  border-top-left-radius: 0;
+}
+
+div[data-rehype-pretty-code-fragment] {
+  @apply overflow-auto;
+}
+
+div[data-rehype-pretty-code-title] {
+  @apply inline-flex items-center justify-between text-xs font-mono text-slate-500 bg-code py-2 px-3 rounded-t-md;
+}
