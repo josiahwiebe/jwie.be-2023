@@ -1,10 +1,13 @@
-'use client'
-import { signOut } from 'next-auth/react'
+import { signOut } from '@lib/auth'
 
 export default function LogoutButton() {
   return (
-    <button className='uppercase text-xs tracking-wide text-gray-400' onClick={() => signOut()}>
-      Sign out
-    </button>
+    <form
+      action={async () => {
+        'use server'
+        await signOut()
+      }}>
+      <button className='uppercase text-xs tracking-wide text-gray-400'>Sign out</button>
+    </form>
   )
 }

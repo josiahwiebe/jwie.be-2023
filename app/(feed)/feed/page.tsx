@@ -1,7 +1,7 @@
 import ComposeStatusForm from '@components/compose-status'
+import { auth } from '@lib/auth'
 import { db } from '@lib/db'
 import { formatDate, formatDateAndTime } from '@lib/utils'
-import { unstable_getServerSession } from 'next-auth/next'
 import Image from 'next/image'
 import Profile from '../../../public/avatar.jpg'
 
@@ -19,7 +19,7 @@ export const metadata = {
 
 export default async function FeedPage() {
   const statuses = await getStatuses()
-  const session = await unstable_getServerSession()
+  const session = await auth()
 
   return (
     <>

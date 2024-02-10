@@ -1,10 +1,10 @@
 import FeedTitle from '@components/feed-title'
 import LoginButton from '@components/login-button'
 import LogoutButton from '@components/logout-button'
-import { unstable_getServerSession } from 'next-auth'
+import { auth } from '@lib/auth'
 
 export default async function FeedLayout({ children }) {
-  const session = await unstable_getServerSession()
+  const session = await auth()
   return (
     <div className='mt-12 grid-column-2'>
       <div className='border border-slate-100 dark:border-slate-600'>
