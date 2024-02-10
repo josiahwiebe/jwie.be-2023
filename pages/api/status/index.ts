@@ -1,18 +1,16 @@
 import { db } from '@lib/db'
 import { TwitterApi } from 'twitter-api-v2'
 import { NextApiRequest, NextApiResponse } from 'next'
-import { unstable_getServerSession } from 'next-auth/next'
-import { getToken } from 'next-auth/jwt'
-import { authOptions } from '../auth/[...nextauth]'
+import { auth } from '@lib/auth'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const date = new Date()
-  const session = await unstable_getServerSession(req, res, authOptions)
-  const token = await getToken({ req, secret: authOptions.secret })
-  console.log('api endpoint', { session, token })
+  const session = await auth()
+  console.log('api endpoint', { session })
 
   try {
-    const twitter = new TwitterApi(token.accessToken)
+    if (!session) throw new Error('Not authenticated')
+    const twitter = new TwitterApi(session.accessToken)
 
     const record = await db.status.create({
       data: {
