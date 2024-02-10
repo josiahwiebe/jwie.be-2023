@@ -1,8 +1,11 @@
 import Link from 'next/link'
 import PageHeader from '@components/page-header'
-
 import { Blog } from '@lib/mdx/sources'
 import { formatDate } from '@lib/utils'
+
+export const metadata = {
+  title: 'Blog',
+}
 
 export default async function BlogPage() {
   const posts = await Blog.getAllMdxNodes()

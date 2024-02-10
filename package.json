@@ -22,6 +22,7 @@
     "node-cache": "^5.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-lite-yt-embed": "^1.2.7",
     "rehype-pretty-code": "^0.9.2",
     "shiki": "^0.12.1",
     "twitter-api-v2": "^1.12.9",

@@ -15,3 +15,44 @@ export default async function IndexPage() {
     </section>
   )
 }
+
+export const metadata = {
+  title: {
+    default: 'Josiah Wiebe',
+    template: '%s — Josiah Wiebe',
+  },
+  description: 'Josiah Wiebe is a multi-disciplinary developer and marketing manager based in the Canadian Praries.',
+  openGraph: {
+    title: 'Josiah Wiebe',
+    description: 'Josiah Wiebe is a multi-disciplinary developer and marketing manager based in the Canadian Praries',
+    url: 'https://jwie.be',
+    siteName: 'Josiah Wiebe',
+    images: [
+      {
+        url: 'https://jwie.be/og.jpg',
+        width: 1920,
+        height: 1080,
+      },
+    ],
+    locale: 'en-CA',
+    type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  twitter: {
+    title: 'Josiah Wiebe',
+    card: 'summary_large_image',
+  },
+  icons: {
+    shortcut: '/favicon.ico',
+  },
+}

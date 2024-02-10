@@ -1,6 +1,10 @@
 import { Archive } from '@lib/mdx/sources'
 import BlogLayout from 'app/(blog)/blog-layout'
 
+export const metadata = {
+  title: 'Archive',
+}
+
 export default async function LogbookPage() {
   const posts = await Archive.getAllMdxNodes()
 

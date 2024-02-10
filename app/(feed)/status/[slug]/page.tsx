@@ -23,6 +23,11 @@ interface StatusPageProps {
 
 export const dynamic = 'force-dynamic'
 
+export async function generateMetadata({ params }) {
+  const status = await getStatus(params.slug)
+  return { title: `@josiahwiebe: ${status?.content}`, description: status?.content }
+}
+
 export default async function StatusPage({ params }: StatusPageProps) {
   const status = await getStatus(params.slug)
 
@@ -67,8 +72,8 @@ export default async function StatusPage({ params }: StatusPageProps) {
       <footer className='mt-4 flex space-x-1 lg:space-x-2 items-center'>
         <span className='text-sm text-slate-400'>{formatDateAndTime(status.createdAt.toString())}</span>
         <span className='text-slate-400'>•</span>
-        <a href={status.client.link} className='text-sm text-slate-400 no-underline'>
-          {status.client.name}
+        <a href={status?.client?.link ?? '#'} className='text-sm text-slate-400 no-underline'>
+          {status?.client?.name}
         </a>
         {status.linkedTweet && (
           <>

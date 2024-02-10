@@ -29,6 +29,7 @@ export default function PageHead({ params = { title: '', excerpt: '', overrideTi
       <link rel='me authn' href='https://github.com/josiahwiebe' />
       <link rel='me' href='https://twitter.com/josiahwiebe' />
       <link rel='me' href='https://mastodon.social/@josiahwiebe' />
+      <link rel='authorization_endpoint' href='https://indieauth.com/auth' />
     </>
   )
 }

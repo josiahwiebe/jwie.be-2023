@@ -268,5 +268,6 @@ div[data-rehype-pretty-code-fragment] {
 }
 
 div[data-rehype-pretty-code-title] {
-  @apply inline-flex items-center justify-between text-xs font-mono text-slate-500 bg-code py-2 px-3 rounded-t-md;
+  background-color: var(--tw-prose-pre-bg);
+  @apply inline-flex items-center justify-between text-xs font-mono text-slate-500 py-2 px-3 rounded-t-md;
 }

@@ -13,6 +13,10 @@ async function getStatuses() {
   })
 }
 
+export const metadata = {
+  title: 'Feed',
+}
+
 export default async function FeedPage() {
   const statuses = await getStatuses()
   const session = await unstable_getServerSession()

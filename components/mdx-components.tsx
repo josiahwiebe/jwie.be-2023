@@ -1,4 +1,5 @@
 import NextImage from 'next/image'
+import YouTubeEmbed from '@components/yt-embed'
 
 function Image({ src, width = 700, height = 475, alt, contain, ...props }) {
   return (
@@ -39,4 +40,4 @@ function ImageWithCaption({ src, width = 700, height = 475, alt, children, ...pr
   )
 }
 
-export default { ImageWithCaption, Image }
+export default { ImageWithCaption, Image, YouTubeEmbed }

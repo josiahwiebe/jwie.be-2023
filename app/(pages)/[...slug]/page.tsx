@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { Page } from '@lib/mdx/sources'
 // import { MdxContent } from '@components/mdx-content'
@@ -10,6 +11,14 @@ interface PageProps {
   params: {
     slug: string[]
   }
+}
+
+export async function generateMetadata({ params }): Promise<Metadata | undefined> {
+  const page = await Page.getMdxNode(params.slug)
+  if (!page) {
+    return
+  }
+  return { title: page.frontMatter.title, description: page.frontMatter.excerpt }
 }
 
 export async function generateStaticParams(): Promise<PageProps['params'][]> {

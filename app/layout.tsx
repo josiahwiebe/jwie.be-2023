@@ -2,7 +2,7 @@ import '@styles/styles.css'
 import Link from 'next/link'
 import { AnalyticsWrapper } from '../components/analytics'
 import { SiteNavigation, SiteNavProps } from '@components/site-nav'
-import localFont from '@next/font/local'
+import localFont from 'next/font/local'
 
 const getYear = () => {
   const now = new Date()
