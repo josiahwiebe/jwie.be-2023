@@ -15,7 +15,7 @@ export default function PostLayout({ post }: { post: any }) {
           {/* @ts-expect-error Server Component */}
           <MDXRemote
             source={post.content}
-            components={mdxComponents}
+            components={{ ...mdxComponents, ...(post.components || {}) }}
             options={{ mdxOptions: { rehypePlugins: [[rehypePrettyCode, { theme: 'nord' }]] } }}
           />
           {/* <MdxContent source={post.content} options={{ mdxOptions: { rehypePlugins: [rehypePrism] } }} /> */}
